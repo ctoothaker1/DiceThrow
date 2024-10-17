@@ -12,12 +12,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val fragment = DieFragment.newInstance(100)
-        (supportFragmentManager
+        val fragment = DieFragment.newInstance(1000)
+    if (supportFragmentManager.findFragmentById(R.id.diceContainer)!is DieFragment)
+        supportFragmentManager
             .beginTransaction()
             .add(R.id.diceContainer,fragment)
-            .commit())
+            .commit()
+
 
         findViewById<Button>(R.id.rollDiceButton).setOnClickListener{
             (supportFragmentManager
