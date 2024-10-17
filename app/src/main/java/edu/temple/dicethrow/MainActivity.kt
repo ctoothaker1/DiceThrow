@@ -12,11 +12,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        val fragment = DieFragment.newInstance(100)
+        (supportFragmentManager
+            .beginTransaction()
+            .add(R.id.diceContainer,fragment)
+            .commit())
+
         findViewById<Button>(R.id.rollDiceButton).setOnClickListener{
-            (supportFragmentManager.findFragmentById(R.id.diceContainer) as DieFragment).throwDie()
-                                    // returns object of type fragment -> this means compiler will not recognise functions in dieFragment. Must cast
-
-
+            (supportFragmentManager
+                .findFragmentById(R.id.diceContainer) as DieFragment).throwDie()
+                        // returns object of type fragment -> this means compiler will not recognise functions in dieFragment. Must cast
 
         }
     }
