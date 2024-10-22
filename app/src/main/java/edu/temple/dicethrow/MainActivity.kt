@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ButtonFragment.ButtonInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,13 +23,17 @@ class MainActivity : AppCompatActivity() {
             .commit()
 
 
-        findViewById<Button>(R.id.rollDiceButton).setOnClickListener{
-            (supportFragmentManager
-                .findFragmentById(R.id.diceContainer) as DieFragment).throwDie()
+//        findViewById<Button>(R.id.rollDiceButton).setOnClickListener{
+//            (supportFragmentManager
+//                .findFragmentById(R.id.diceContainer) as DieFragment).throwDie()
                         // returns object of type fragment -> this means compiler will not recognise functions in dieFragment. Must cast
 
         }
+
+    override fun buttonClicked() {
+        TODO("Not yet implemented")
     }
+}
 
 
 
