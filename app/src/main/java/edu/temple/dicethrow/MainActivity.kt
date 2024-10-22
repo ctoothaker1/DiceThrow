@@ -31,11 +31,12 @@ class MainActivity : AppCompatActivity(), ButtonFragment.ButtonInterface {
         }
 
     override fun buttonClicked() {
-        TODO("Not yet implemented")
+
+        (supportFragmentManager
+                .findFragmentById(R.id.diceContainer) as DieFragment).throwDie()
     }
 }
 
 
 
 
-}
