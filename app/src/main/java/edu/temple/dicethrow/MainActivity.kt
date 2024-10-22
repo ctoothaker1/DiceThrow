@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val fragment = DieFragment.newInstance(1000)
+
+
+
     if (supportFragmentManager.findFragmentById(R.id.diceContainer)!is DieFragment)
         supportFragmentManager
             .beginTransaction()
