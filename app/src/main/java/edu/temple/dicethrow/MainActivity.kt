@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity(), ButtonFragment.ButtonInterface {
+class MainActivity : AppCompatActivity(), ButtonFragment.ButtonInterface { // need to implement button interface
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragment = DieFragment.newInstance(1000)
+        val fragment = DieFragment.newInstance(6)
 
 
 
